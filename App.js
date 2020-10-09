@@ -100,17 +100,20 @@ export default function App() {
               </View>
             </View>
             <View>
-              <Image style={{ width: 338, height: 160, resizeMode: 'cover' }} source={require('./assets/mustang.jpg')} />
+              <TouchableOpacity onPress={() => console.log('post image pressed')}>
+                <Image style={{ width: dynwidth * 0.94, height: dynheight / 4 }} source={require('./assets/mustang.jpg')} />
+              </TouchableOpacity>
             </View>
             <View>
-              <Text style={{ padding: 10, color: 'grey' }} numberOfLines={4}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud <TouchableOpacity onPress={() => console.log('post read')}>
-                  <Text style={{ color: 'red' }}>  Continue Reading  </Text></TouchableOpacity> exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.</Text>
+              <TouchableOpacity onPress={() => console.log('post text pressed')}>
+                <Text style={{ padding: 10, color: 'grey' }} numberOfLines={4} ellipsizeMode='tail'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud  exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officia deserunt mollit anim id est laborum.</Text>
+              </TouchableOpacity>
             </View>
             <View style={{ borderBottomColor: 'rgb(211, 211, 211)', borderBottomWidth: 1, margin: 10 }} />
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -130,7 +133,7 @@ export default function App() {
               </View>
               <View style={{ flexDirection: 'row' }}>
                 <FontAwesomeIcon icon={faEye} size={20} margin={10} color={'grey'} />
-                <Text style={{ color: 'grey', marginVertical: 10 }}>Views (10)</Text>
+                <Text style={{ color: 'grey', marginVertical: 10, marginRight: 10 }}>Views (10)</Text>
               </View>
             </View>
           </View>
@@ -145,17 +148,20 @@ export default function App() {
               </View>
             </View>
             <View>
-              <Image style={{ width: 338, height: 160, resizeMode: 'cover' }} source={require('./assets/mustang.jpg')} />
+              <TouchableOpacity onPress={() => console.log('post image pressed')}>
+                <Image style={{ width: dynwidth * 0.94, height: dynheight / 4 }} source={require('./assets/mustang.jpg')} />
+              </TouchableOpacity>
             </View>
             <View>
-              <Text style={{ padding: 10, color: 'grey' }} numberOfLines={4}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud <TouchableOpacity onPress={() => console.log('post read')}>
-                  <Text style={{ color: 'red' }}>  Continue Reading  </Text></TouchableOpacity> exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.</Text>
+              <TouchableOpacity onPress={() => console.log('post text pressed')}>
+                <Text style={{ padding: 10, color: 'grey' }} numberOfLines={4} ellipsizeMode='tail'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud  exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officia deserunt mollit anim id est laborum.</Text>
+              </TouchableOpacity>
             </View>
             <View style={{ borderBottomColor: 'rgb(211, 211, 211)', borderBottomWidth: 1, margin: 10 }} />
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -175,7 +181,7 @@ export default function App() {
               </View>
               <View style={{ flexDirection: 'row' }}>
                 <FontAwesomeIcon icon={faEye} size={20} margin={10} color={'grey'} />
-                <Text style={{ color: 'grey', marginVertical: 10 }}>Views (10)</Text>
+                <Text style={{ color: 'grey', marginVertical: 10, marginRight: 10 }}>Views (10)</Text>
               </View>
             </View>
           </View>
@@ -183,16 +189,16 @@ export default function App() {
       </ScrollView>
       <View style={styles.rowaround}>
         <TouchableOpacity onPress={() => console.log('icon pressed')}>
-          <FontAwesomeIcon icon={faCompass} size={30} color={'grey'} />
+          <FontAwesomeIcon icon={faCompass} size={30} marginVertical={10} color={'grey'} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log('icon pressed')}>
-          <FontAwesomeIcon icon={faSearch} size={30} color={'grey'} />
+          <FontAwesomeIcon icon={faSearch} size={30} marginVertical={10} color={'grey'} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log('icon pressed')}>
-          <FontAwesomeIcon icon={faEnvelope} size={30} color={'grey'} />
+          <FontAwesomeIcon icon={faEnvelope} size={30} marginVertical={10} color={'grey'} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log('icon pressed')}>
-          <FontAwesomeIcon icon={faUser} size={30} color={'grey'} />
+          <FontAwesomeIcon icon={faUser} size={30} marginVertical={10} color={'grey'} />
         </TouchableOpacity>
       </View>
     </View>
@@ -217,7 +223,7 @@ const styles = StyleSheet.create({
     margin: 10,
     position: 'relative',
     resizeMode: 'contain',
-    borderRadius: 5
+    borderRadius: 10,
   },
   imagecontainer: {
     flexDirection: "row",
@@ -226,8 +232,8 @@ const styles = StyleSheet.create({
   pending: {
     position: 'absolute',
     padding: 2,
-    top: 4,
-    right: 4,
+    top: dynheight / 140,
+    right: dynwidth / 140,
     backgroundColor: 'rgba(255,255,255,0.4)',
     color: 'snow',
     borderRadius: 40,
@@ -236,8 +242,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontWeight: 'bold',
     fontSize: 25,
-    top: 35,
-    left: 10,
+    top: dynheight / 20,
+    left: dynwidth / 50,
     color: 'white'
   },
   imagetext: {
@@ -245,8 +251,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
-    left: 10,
-    bottom: 15
+    left: dynwidth / 50,
+    bottom: dynheight / 45,
   },
   rowaround: {
     flexDirection: 'row',
