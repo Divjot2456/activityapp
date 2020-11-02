@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {
   faCompass, faSearch, faEnvelope, faUser,
@@ -10,13 +11,52 @@ import {
   SafeAreaView, Dimensions, ScrollView, TouchableOpacity, ImageBackground, TextInput
 } from "react-native";
 
+// function Post() {
+//   const postState = useState([]);
+//   const post = postState[0];
+//   const setPost = postState[1];
+// }
+
+
+
+
 export default function App() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    // test api https://testapi.io/api/divjot97/comments
+    // local api http://192.168.1.9:3000/comments
+    // localhost address 1 127.0.0.1
+    // localhost address 2 10.0.2.2
+    fetch('http://192.168.1.9:3000/comments')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        return responseJson;
+      })
+      .catch(error => {
+        console.log(error)
+      });
+  }, []);
+  // const [person, setPerson] = useState([]);
+  // ip address 192.168.1.9
+  // localhost address 10.0.2.2
+  // axios.get('http://localhost:3000/comments')
+  //   .then(response => {
+  //     console.log('getting data from axios', response.data);
+  //     // setPerson(response.data);
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //   });
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
         <SafeAreaView>
+
           <Text style={styles.header}>Activity</Text>
           <StatusBar style="auto" />
+
           <View style={styles.imagecontainer}>
             <TouchableOpacity onPress={() => console.log('image pressed')}>
               <ImageBackground style={styles.images} source={require("./assets/1.png")}>
